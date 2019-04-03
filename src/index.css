@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,4 +11,102 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header-section-wrapper {
+  height: 168px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(180deg, #555761 -51.19%, #2B2D35 100%);
+}
+
+.main-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  padding: 16px 20px 11px 20px;
+  background: linear-gradient(180deg, #31333B 13.26%, #363945 74.59%, #2B2D35 100%);
+}
+
+.search {
+  width: 100%;
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  padding: 19px 14px;
+  background: #4B4E5C;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: unset;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #FFFFFF;
+  outline: none;
+}
+
+.search input[type="search"]::placeholder,
+.search input[type="search"]::-webkit-input-placeholder,
+.search input[type="search"]:-moz-placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #FFFFFF;
+}
+
+.select {
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroes-list-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  border-radius: 8px;
+  padding: 0 8px 16px 8px;
+}
+
+.hero:last-child {
+  margin-right: unset;
+}
+
+.hero p {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 5px 0 0 0;
+  margin: 0;
+}
+
+.hero img {
+  width: 100%;
+  height: 100px;
+}
+
+.opacity-logo {
+  opacity: 0.2;
 }

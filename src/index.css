@@ -54,7 +54,8 @@ code {
   outline: none;
 }
 
-.search input[type="search"]::placeholder,
+.search input[placeholder],
+.search input[type="search"]::-webkit-input-placeholder,
 .search input[type="search"]::-webkit-input-placeholder,
 .search input[type="search"]:-moz-placeholder {
   font-family: 'Roboto', sans-serif;
@@ -105,6 +106,7 @@ code {
 .hero img {
   width: 100%;
   height: 100px;
+  border-radius: 8px;
 }
 
 .opacity-logo {

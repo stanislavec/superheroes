@@ -4,19 +4,19 @@ import HeroesList from './superheroes.json'
 
 class Heroes extends Component {
   state = {
-    allHeroes: HeroesList,
     marvelHeroes: HeroesList.marvel,
     dcHeroes: HeroesList.dc
   };
-
   render() {
+    let universe = this.props.dcUniverse ? this.state.dcHeroes : this.state.marvelHeroes
     return (
       <div className="heroes-list-wrapper">
-        {this.state.marvelHeroes.map((hero, i) =>
-          <div key={i} className="hero">
-            <img src={hero.image}></img>
-            <p>{hero.name}</p>
-          </div>
+        {universe.map(
+          (hero, i) =>
+            <div key={i} className="hero">
+              <img src={hero.image}></img>
+              <p>{hero.name}</p>
+            </div>
         )}
       </div>
     );

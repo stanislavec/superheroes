@@ -18,7 +18,7 @@ class Main extends Component {
         <div className="search">
           <input placeholder="Имя героя" type="search"></input>
         </div>
-        <HeroesList universe={this.state.dcActive}/>
+        <HeroesList dcUniverse={this.state.dcActive}/>
         <div className="select">
           <div id="dc" onClick={(e) => this.revertUniverse(e, {isDC: true})} className="select-icon">
             <img className={this.state.dcActive ? '' : 'opacity-logo'} src="/dc-logo.png"></img>

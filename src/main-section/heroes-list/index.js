@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import HeroesList from './superheroes.json'
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import PropTypes from 'prop-types';
+import * as makeActions from '../../actions/makeActions';
 
 class Heroes extends Component {
-  state = {
-    marvelHeroes: HeroesList.marvel,
-    dcHeroes: HeroesList.dc
+  constructor(props) {
+    super(props);
+    this.selectHero = this.selectHero.bind(this);
+  };
+  selectHero(e, hero) {
+    this.props.makeActions.receiveSelect(hero);
   };
   render() {
-    let universe = this.props.dcUniverse ? this.state.dcHeroes : this.state.marvelHeroes
     return (
       <div className="heroes-list-wrapper">
-        {universe.map(
+        {this.props.showHeroes.map(
           (hero, i) =>
-            <div key={i} className="hero">
+            <div
+              onClick={(e) => this.selectHero(e, hero)}
+              key={i}
+              className="hero"
+            >
               <img alt={hero.name} src={hero.image}></img>
               <p>{hero.name}</p>
             </div>
@@ -20,6 +29,26 @@ class Heroes extends Component {
       </div>
     );
   }
+};
+
+Heroes.propTypes = {
+  makeActions: PropTypes.object,
+  selectedHeroes: PropTypes.array
+};
+
+function mapStateToProps(state) {
+  return {
+    selectedHeroes: state.select
+  };
 }
 
-export default Heroes;
+function mapDispatchToProps(dispatch) {
+  return {
+    makeActions: bindActionCreators(makeActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Heroes);

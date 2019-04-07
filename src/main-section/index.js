@@ -57,7 +57,7 @@ class Main extends Component {
             >
             </input>
             <div className="icon-loupe">
-              <img src="./icon-loupe.png"></img>
+              <img alt="loupe" src="./icon-loupe.png"></img>
             </div>
           </div>
           {window.innerWidth < 767 ? (

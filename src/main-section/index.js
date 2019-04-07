@@ -57,7 +57,7 @@ class Main extends Component {
             >
             </input>
             <div className="icon-loupe">
-              <img src="/icon-loupe.png"></img>
+              <img src="./icon-loupe.png"></img>
             </div>
           </div>
           {window.innerWidth < 767 ? (
@@ -67,12 +67,12 @@ class Main extends Component {
           <div className="select">
             <Link to='/dc'>
               <div id="dc" onClick={(e) => this.revertUniverse(e, {isDC: true})} className="select-icon">
-                <img alt='dc' className={this.state.dcActive ? '' : 'opacity-logo'} src="/dc-logo.png"></img>
+                <img alt='dc' className={this.state.dcActive ? '' : 'opacity-logo'} src="./dc-logo.png"></img>
               </div>
             </Link>
             <Link to='/marvel'>
               <div id="marvel" onClick={(e) => this.revertUniverse(e, {isDC: false})} className="select-icon">
-                <img alt='marvel' className={this.state.dcActive ? 'opacity-logo' : ''} src="/marvel.png"></img>
+                <img alt='marvel' className={this.state.dcActive ? 'opacity-logo' : ''} src="./marvel.png"></img>
               </div>
             </Link>
           </div>

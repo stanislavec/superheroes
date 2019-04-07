@@ -39,11 +39,12 @@ class Main extends Component {
       return this.props.searchResult
     }
     if (this.state.search && !this.props.searchResult) {
-      return 
+      return
     }
     return this.state.dcActive ? this.state.dcHeroes : this.state.marvelHeroes
   };
   render() {
+    console.log(window.innerWidth)
     return (
       <Router>
         <div className="main-section-wrapper">
@@ -55,11 +56,14 @@ class Main extends Component {
               onChange={this.handleChange}
             >
             </input>
-            <div class="icon-loupe">
+            <div className="icon-loupe">
               <img src="/icon-loupe.png"></img>
             </div>
           </div>
-          <HeroesList showHeroes={this.showHero()}/>
+          {window.innerWidth < 767 ? (
+            <HeroesList showHeroes={this.showHero()}/>
+          ) : ('')
+          }
           <div className="select">
             <Link to='/dc'>
               <div id="dc" onClick={(e) => this.revertUniverse(e, {isDC: true})} className="select-icon">
@@ -72,6 +76,10 @@ class Main extends Component {
               </div>
             </Link>
           </div>
+          {window.innerWidth >= 767 ? (
+            <HeroesList showHeroes={this.showHero()}/>
+          ) : ('')
+          }
         </div>
       </Router>
     );

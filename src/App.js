@@ -1,28 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import PropTypes from 'prop-types';
+import * as makeActions from './actions/makeActions';
+import HeaderSection from './header/index'
+import MainSection from './main-section/index'
 import './App.css';
+
+// const store = configureStore();
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div className="App">
+          {
+            (this.props.selectedHeroes && this.props.selectedHeroes.length) ? (
+              <HeaderSection showHeroes={this.props.selectedHeroes}/>
+            ) : ''
+          }
+          <MainSection/>
+        </div>
     );
   }
 }
 
-export default App;
+App.propTypes = {
+  makeActions: PropTypes.object,
+  selectedHeroes: PropTypes.array
+};
+
+function mapStateToProps(state) {
+  return {
+    selectedHeroes: state.select
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    makeActions: bindActionCreators(makeActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

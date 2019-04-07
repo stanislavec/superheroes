@@ -9,6 +9,9 @@ class Header extends Component {
     super(props);
     this.removeHero = this.removeHero.bind(this);
   };
+  state = {
+    showCloseButton: false
+  }
   makeHeroArr () {
     let heroArr = this.props.showHeroes
     let counter = heroArr.reduce(function (o, i) {
@@ -29,6 +32,11 @@ class Header extends Component {
   removeHero (e, hero) {
     this.props.makeActions.receiveRemove(hero);
   };
+  toogleClose() {
+    this.setState(state => ({
+      showCloseButton: !this.state.showCloseButton
+    }));
+  }
   renderSVG () {
     return (
       <svg
@@ -47,13 +55,15 @@ class Header extends Component {
       <div className="header-section-wrapper">
         {this.makeHeroArr().map(
           (hero, i) =>
-            <div key={i} className="selected-hero">
-              <div
-                className="close-button"
-                onClick={(e) => this.removeHero(e, hero)}
-              >
-                {this.renderSVG()}
-              </div>
+            <div key={i} onClick={(e) => this.toogleClose(e)} className="selected-hero">
+              {this.state.showCloseButton ? (
+                <div
+                  className="close-button"
+                  onClick={(e) => this.removeHero(e, hero)}
+                >
+                  {this.renderSVG()}
+                </div>
+              ) : ('')}
               <img alt={hero.name} src={hero.image}></img>
               {hero.count ? (
                 <div className="hero-count">{hero.count}</div>

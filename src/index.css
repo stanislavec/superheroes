@@ -72,7 +72,7 @@ code {
 
 .header-section-wrapper .selected-hero .hero-count {
   position: absolute;
-  left: 12px;;
+  left: 12px;
   bottom: 12px;
   display: flex;
   justify-content: center;
@@ -87,6 +87,10 @@ code {
   font-size: 12px;
   line-height: normal;
   color: #FFFFFF;
+}
+
+.selected-hero:first-child .hero-count {
+  left: 4px;
 }
 
 .main-section-wrapper {

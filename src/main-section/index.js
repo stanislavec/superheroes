@@ -72,7 +72,7 @@ class Main extends Component {
             </Link>
             <Link to='/marvel'>
               <div id="marvel" onClick={(e) => this.revertUniverse(e, {isDC: false})} className="select-icon">
-                <img alt='marvel' className={this.state.dcActive ? 'opacity-logo' : ''} src="./marvel.png"></img>
+                <img alt='marvel' className={this.state.dcActive ? 'opacity-logo' : ''} src="./Marvel.png"></img>
               </div>
             </Link>
           </div>

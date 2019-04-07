@@ -31,11 +31,12 @@ code {
 }
 
 .header-section-wrapper .selected-hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 20%;
   border-radius: 8px;
-  padding: 0 8px 16px 8px;
+  padding: 0 8px;
 }
 
 .header-section-wrapper .selected-hero:last-child {
@@ -46,6 +47,38 @@ code {
   width: 72px;
   height: 100px;
   border-radius: 8px;
+}
+
+.header-section-wrapper .selected-hero .close-button {
+  position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0px;
+    top: -12px;
+    background: #000000;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    box-sizing: border-box;
+    ext-align: center;
+}
+
+.header-section-wrapper .selected-hero .hero-count {
+  position: absolute;
+  left: 12px;;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  /* green */
+  background: #00C35A;
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+  color: #FFFFFF;
 }
 
 .main-section-wrapper {

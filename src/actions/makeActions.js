@@ -53,3 +53,26 @@ function setSelect(hero) {
     selected: hero
   }
 }
+
+// Функция удаления
+export function receiveRemove(hero) {
+  return function (dispatch) {
+    return fetchRemove(hero)
+      .then(
+        hero => dispatch(setRemove(hero)),
+      )
+  };
+};
+
+function fetchRemove(hero) {
+  return new Promise((resolve, reject) => {
+    resolve(hero)
+  })
+};
+
+function setRemove(hero) {
+  return {
+    type: allActions.REMOVE,
+    removed: hero
+  }
+}

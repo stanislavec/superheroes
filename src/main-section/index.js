@@ -35,7 +35,7 @@ class Main extends Component {
     this.props.makeActions.receiveSearch(universe, this.state.search);
   };
   showHero () {
-    if (this.props.searchResult && this.props.searchResult.length) {
+    if (this.props.searchResult && this.props.searchResult.length && this.state.search) {
       return this.props.searchResult
     }
     return this.state.dcActive ? this.state.dcHeroes : this.state.marvelHeroes

@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/superheroes/static/js/runtime~main.27b42c4e.js"
   },
   {
-    "revision": "a2c07f822793c7dbf546",
-    "url": "/superheroes/static/js/main.b3f18d4e.chunk.js"
+    "revision": "5938ca4854f5574f1d43",
+    "url": "/superheroes/static/js/main.99b4b55b.chunk.js"
   },
   {
     "revision": "10a9045124fa2fa5ad77",
     "url": "/superheroes/static/js/2.f32d8b25.chunk.js"
   },
   {
-    "revision": "a2c07f822793c7dbf546",
+    "revision": "5938ca4854f5574f1d43",
     "url": "/superheroes/static/css/main.ee758fdf.chunk.css"
   },
   {
-    "revision": "3458249b2e05fe7dbc4a65eb16f27c14",
+    "revision": "3243ac3fb9113d01c938d23d43d177ee",
     "url": "/superheroes/index.html"
   }
 ];

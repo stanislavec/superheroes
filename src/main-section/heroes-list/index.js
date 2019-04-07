@@ -13,18 +13,23 @@ class Heroes extends Component {
     this.props.makeActions.receiveSelect(hero);
   };
   render() {
+    let heroesArr = this.props.showHeroes? this.props.showHeroes : null
     return (
       <div className="heroes-list-wrapper">
-        {this.props.showHeroes.map(
-          (hero, i) =>
-            <div
-              onClick={(e) => this.selectHero(e, hero)}
-              key={i}
-              className="hero"
-            >
-              <img alt={hero.name} src={hero.image}></img>
-              <p>{hero.name}</p>
-            </div>
+        {heroesArr ? (
+          heroesArr.map(
+            (hero, i) =>
+              <div
+                onClick={(e) => this.selectHero(e, hero)}
+                key={i}
+                className="hero"
+              >
+                <img alt={hero.name} src={hero.image}></img>
+                <p>{hero.name}</p>
+              </div>
+          )
+        ) : (
+          <p className="nothing">Ничего не найдено</p>
         )}
       </div>
     );

@@ -38,6 +38,9 @@ class Main extends Component {
     if (this.props.searchResult && this.props.searchResult.length && this.state.search) {
       return this.props.searchResult
     }
+    if (this.state.search && !this.props.searchResult) {
+      return 
+    }
     return this.state.dcActive ? this.state.dcHeroes : this.state.marvelHeroes
   };
   render() {
@@ -52,6 +55,9 @@ class Main extends Component {
               onChange={this.handleChange}
             >
             </input>
+            <div class="icon-loupe">
+              <img src="/icon-loupe.png"></img>
+            </div>
           </div>
           <HeroesList showHeroes={this.showHero()}/>
           <div className="select">

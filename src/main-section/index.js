@@ -43,8 +43,11 @@ class Main extends Component {
     }
     return this.state.dcActive ? this.state.dcHeroes : this.state.marvelHeroes
   };
+  generateURL (universe) {
+    return window.location.pathname.indexOf('/superheroes/') !== -1 ?
+      `/superheroes/${universe}` : `/${universe}`
+  }
   render() {
-    console.log(window.innerWidth)
     return (
       <Router>
         <div className="main-section-wrapper">
@@ -65,12 +68,12 @@ class Main extends Component {
           ) : ('')
           }
           <div className="select">
-            <Link to='/dc'>
+            <Link to={this.generateURL('dc')}>
               <div id="dc" onClick={(e) => this.revertUniverse(e, {isDC: true})} className="select-icon">
                 <img alt='dc' className={this.state.dcActive ? '' : 'opacity-logo'} src="./dc-logo.png"></img>
               </div>
             </Link>
-            <Link to='/marvel'>
+            <Link to={this.generateURL('marvel')}>
               <div id="marvel" onClick={(e) => this.revertUniverse(e, {isDC: false})} className="select-icon">
                 <img alt='marvel' className={this.state.dcActive ? 'opacity-logo' : ''} src="./Marvel.png"></img>
               </div>
